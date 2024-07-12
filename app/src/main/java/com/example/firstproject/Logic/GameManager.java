@@ -1,21 +1,26 @@
 package com.example.firstproject.Logic;
 
 import android.os.Handler;
-import android.widget.Toast;
 
 import com.example.firstproject.MainActivity;
+import com.example.firstproject.R;
+import com.example.firstproject.Utilities.SignalManager;
+import com.example.firstproject.Utilities.SoundPlayer;
 
 import java.util.Random;
 
 public class GameManager {
 
-    private int[][] rock_matrix = new int[6][3];
-    private final int[] player_matrix = new int[3];
-    private int player_index = 1;
+    private int[][] ghost_matrix = new int[6][5];
+    private final int[] player_matrix = new int[5];
+    private int player_index = 2;
     MainActivity mainActivity;
-    private static final long DELAY = 1000L;
+    public static long DELAY = 1000L;
     private int life = 3;
+    private int score = -6;
+    private static final int SCORE_POINTS = 1;
     private int numberOfCrash;
+    private SoundPlayer soundPlayer;
     private Random random = new Random();
     private Handler handler = new Handler();
     Runnable runnable = new Runnable() {
@@ -29,6 +34,9 @@ public class GameManager {
         }
     };
 
+    public int getScore() {
+        return score;
+    }
     public GameManager(MainActivity activity)
     {
         mainActivity = activity;
@@ -36,8 +44,8 @@ public class GameManager {
     public int getLife(){
         return life;
     }
-    public int[][] getRock_matrix(){
-        return rock_matrix;
+    public int[][] getGhost_matrix(){
+        return ghost_matrix;
     }
 
     private void startThread()
@@ -46,42 +54,57 @@ public class GameManager {
     }
 
     private void initPlayerMatrix(){
-        player_matrix[1] = player_index;
+        player_matrix[2] = player_index;
     }
 
     private void initRockMatrix(){
-        for (int i = 0; i < rock_matrix.length; i++) {
-            for (int j = 0; j < rock_matrix[0].length; j++) {
-                rock_matrix[i][j] = 0;
+        for (int i = 0; i < ghost_matrix.length; i++) {
+            for (int j = 0; j < ghost_matrix[0].length; j++) {
+                ghost_matrix[i][j] = 0;
             }
         }
     }
 
     private void updateRockMatrix(){
-        int[][] updatedMatrix = new int[rock_matrix.length][rock_matrix[0].length];
-        for(int i = 1; i < rock_matrix.length; i++) {
-            for (int j = 0; j < rock_matrix[0].length; j++) {
-                updatedMatrix[i][j] = rock_matrix[i - 1][j];
+        int[][] updatedMatrix = new int[ghost_matrix.length][ghost_matrix[0].length];
+        for(int i = 1; i < ghost_matrix.length; i++) {
+            for (int j = 0; j < ghost_matrix[0].length; j++) {
+                updatedMatrix[i][j] = ghost_matrix[i - 1][j];
+                }
             }
-        }
-        rock_matrix = updatedMatrix;
+        ghost_matrix = updatedMatrix;
         addNewLineToRockMatrix();
-    }
+        }
+
 
     private void addNewLineToRockMatrix(){
-        int randomNum = random.nextInt(3);
-        rock_matrix[0][randomNum] = 1;
+        int randomNum = random.nextInt(ghost_matrix[0].length);
+        ghost_matrix[0][randomNum] = 1;
     }
 
     private void updateLife(){
-        if(rock_matrix[rock_matrix.length - 1][player_index] == 1){
+        if(checkCollision()){
             life--;
             numberOfCrash++;
-            mainActivity.toastAndVibrate("Crashed!");
+            SignalManager
+                    .getInstance()
+                    .toast("Crashed!");
+            SignalManager
+                    .getInstance()
+                    .vibrate(1000);
+
+            mainActivity.playHitSound();
         }
+        else
+            score += SCORE_POINTS;
     }
 
-
+    public boolean checkCollision(){
+        if(ghost_matrix[ghost_matrix.length - 1][player_index] == 1){
+            return true;
+        }
+        return false;
+    }
     public int movePlayerToRight(){
         if(player_index < player_matrix.length - 1){
             player_matrix[player_index] = 0;
@@ -113,12 +136,14 @@ public class GameManager {
 
     public void startGame(){
         initBoard();
+        soundPlayer = new SoundPlayer(mainActivity);
         startThread();
     }
 
     public void restartGame(){
         life = 3;
         numberOfCrash = 0;
+        score = 0;
         initBoard();
         mainActivity.refreshUI();
     }

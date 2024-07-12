@@ -5,7 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/game_background">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:textColor="@color/white"
+        android:textSize="@dimen/score_text_size"
+        android:textStyle="bold"
+        tools:text="000" />
+
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="140dp"
@@ -67,7 +82,7 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:layout_marginBottom="@dimen/default_layout_margin_bottom">
@@ -77,21 +92,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/player" />
+            app:srcCompat="@drawable/game" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player_left_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/game" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_player_center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/player" />
+            app:srcCompat="@drawable/game" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player_right_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/game" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_player_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/player" />
+            app:srcCompat="@drawable/game" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -110,25 +139,39 @@
         android:layout_marginBottom="0dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_rock1"
+            android:id="@+id/main_IMG_ghost1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/rock" />
+            app:srcCompat="@drawable/ghost" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_rock2"
+            android:id="@+id/main_IMG_ghost2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/rock" />
+            app:srcCompat="@drawable/ghost" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_rock3"
+            android:id="@+id/main_IMG_ghost3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:srcCompat="@drawable/rock" />
+            app:srcCompat="@drawable/ghost" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_ghost4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ghost" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_ghost5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ghost" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -139,26 +182,42 @@
             android:orientation="horizontal"
             android:layout_marginBottom="@dimen/default_layout_margin">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock5"
+                android:id="@+id/main_IMG_ghost6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock6"
+                android:id="@+id/main_IMG_ghost7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -170,25 +229,40 @@
             android:layout_marginBottom="@dimen/default_layout_margin">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock7"
+                android:id="@+id/main_IMG_ghost11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock8"
+                android:id="@+id/main_IMG_ghost12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock9"
+                android:id="@+id/main_IMG_ghost13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -200,25 +274,40 @@
             android:layout_marginBottom="@dimen/default_layout_margin">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock10"
+                android:id="@+id/main_IMG_ghost16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock11"
+                android:id="@+id/main_IMG_ghost17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock12"
+                android:id="@+id/main_IMG_ghost18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -230,25 +319,40 @@
             android:layout_marginBottom="@dimen/default_layout_margin">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock13"
+                android:id="@+id/main_IMG_ghost21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock14"
+                android:id="@+id/main_IMG_ghost22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock15"
+                android:id="@+id/main_IMG_ghost23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -260,25 +364,40 @@
             android:layout_marginBottom="@dimen/default_layout_margin">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock16"
+                android:id="@+id/main_IMG_ghost26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock17"
+                android:id="@+id/main_IMG_ghost27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_rock18"
+                android:id="@+id/main_IMG_ghost28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/rock" />
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_IMG_ghost30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ghost" />
+
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

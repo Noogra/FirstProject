@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">FirstProject</string>
+    <string name="app_name"> </string>
+    <string name="slow_btn">Slow</string>
+    <string name="fast_btn">Fast</string>
+    <string name="sensorMode_btn">Sensor Mode</string>
+    <string name="highscore_btn">Highscores</string>
+    <string name="PacMan_Runner">PacMan Runner</string>
+    <string name="startGame">Start Game</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_1">Fragment #1</string>
+
 </resources>
