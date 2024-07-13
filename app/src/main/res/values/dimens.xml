@@ -8,4 +8,5 @@
     <dimen name="default_layout_margin_bottom">80dp</dimen>
     <dimen name="default_layout_margin">8dp</dimen>
     <dimen name="default_layout_height">96dp</dimen>
+    <dimen name="default_highscore_button_height">37dp</dimen>
 </resources>

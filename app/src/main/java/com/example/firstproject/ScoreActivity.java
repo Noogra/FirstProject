@@ -1,5 +1,6 @@
 package com.example.firstproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
@@ -13,10 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.firstproject.Fragments.ListFragment;
 import com.example.firstproject.Fragments.MapFragment;
 import com.example.firstproject.Interface.Callback_ListItemClicked;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.Map;
 
 public class ScoreActivity extends AppCompatActivity {
+    private MaterialButton return_btn;
     private FrameLayout main_FRAME_list;
     private FrameLayout main_FRAME_map;
 
@@ -44,11 +47,19 @@ public class ScoreActivity extends AppCompatActivity {
 
         mapFragment = new MapFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.main_FRAME_map, mapFragment).commit();
+        return_btn.setOnClickListener(v -> returnMenu());
+    }
+
+    private void returnMenu() {
+        Intent intent = new Intent(ScoreActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void findViews() {
         main_FRAME_list = findViewById(R.id.main_FRAME_list);
         main_FRAME_map = findViewById(R.id.main_FRAME_map);
+        return_btn = findViewById(R.id.return_btn);
     }
 
 

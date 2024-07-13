@@ -43,4 +43,8 @@ dependencies {
 
     //Gson
     implementation(libs.gson)
+
+    //Google Maps
+    implementation (libs.play.services.maps.v1810)
+    implementation(libs.play.services.location)
 }

@@ -34,4 +34,10 @@ public class SharedPreferencesManagerV3 {
     public String getString(String key, String defValue){
         return sharedPref.getString(key, defValue);
     }
+
+    public void removeEntry(String key){
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove(key);
+        editor.apply();
+    }
 }

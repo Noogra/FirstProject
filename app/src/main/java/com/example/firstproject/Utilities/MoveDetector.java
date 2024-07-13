@@ -7,7 +7,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 
 import com.example.firstproject.Interface.MoveCallback;
-import com.example.firstproject.MainActivity;
 
 public class MoveDetector {
     private SensorManager sensorManager;

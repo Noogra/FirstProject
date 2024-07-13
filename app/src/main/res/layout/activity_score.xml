@@ -7,6 +7,15 @@
     android:orientation="vertical"
     tools:context=".ScoreActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/return_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:text="back"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="10sp"/>
+
     <FrameLayout
         android:id="@+id/main_FRAME_list"
         android:layout_width="match_parent"

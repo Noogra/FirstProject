@@ -1,408 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/game_background">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/new_pacman_wallpaper"
+    >
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/main_LBL_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:textColor="@color/white"
-        android:textSize="@dimen/score_text_size"
-        android:textStyle="bold"
-        tools:text="000" />
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin">
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/main_IMG_heart1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/heart" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/main_IMG_heart2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/heart" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/main_IMG_heart3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        app:srcCompat="@drawable/heart" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:layout_marginHorizontal="@dimen/default_margin"
-        android:layout_marginBottom="@dimen/default_margin">
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/main_BTN_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Left" />
-
-        <View
-            android:layout_width="196dp"
-            android:layout_height="0dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/main_BTN_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Right" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/default_layout_margin_bottom">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/game" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player_left_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/game" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/game" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player_right_center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/game" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/game" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="@dimen/default_height">
+        android:weightSum="4">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/default_layout_height"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:layout_marginBottom="0dp">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_ghost1"
+        <TextView
+            android:layout_width="297dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/PacMan_Runner"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="133dp" />
+
+
+        <include
+            layout="@layout/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            />
+
+        <Switch
+            android:id="@+id/main_SWC_sensor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ghost" />
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:onClick="onSwitchClick"
+            android:text="@string/sensorMode_btn"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_ghost2"
+
+        <TextView
+            android:layout_width="297dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/startButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ghost" />
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:text="@string/startGame"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:iconTint="@color/black" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_ghost3"
+        <Button
+            android:id="@+id/highscoreButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ghost" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_ghost4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ghost" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_ghost5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ghost" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_layout_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/default_layout_margin">
+            android:layout_gravity="center"
+            android:text="@string/highscore_btn"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
+    </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_layout_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/default_layout_margin">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_layout_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/default_layout_margin">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_layout_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/default_layout_margin">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_layout_height"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="@dimen/default_layout_margin">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_IMG_ghost30"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ghost" />
-
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-</RelativeLayout>
+</FrameLayout>

@@ -2,8 +2,9 @@ package com.example.firstproject.Logic;
 
 import android.os.Handler;
 
-import com.example.firstproject.MainActivity;
-import com.example.firstproject.R;
+import com.example.firstproject.GameActivity;
+import com.example.firstproject.Models.HighScoreRepository;
+import com.example.firstproject.Models.Score;
 import com.example.firstproject.Utilities.SignalManager;
 import com.example.firstproject.Utilities.SoundPlayer;
 
@@ -14,11 +15,12 @@ public class GameManager {
     private int[][] ghost_matrix = new int[6][5];
     private final int[] player_matrix = new int[5];
     private int player_index = 2;
-    MainActivity mainActivity;
-    public static long DELAY = 1000L;
+    GameActivity gameActivity;
+    private HighScoreRepository highScoreRepository;
+    private long DELAY = 1000L;
     private int life = 3;
     private int score = -6;
-    private static final int SCORE_POINTS = 1;
+    private final int SCORE_POINTS = 1;
     private int numberOfCrash;
     private SoundPlayer soundPlayer;
     private Random random = new Random();
@@ -30,16 +32,16 @@ public class GameManager {
             updateLife();
             handler.postDelayed(this, DELAY);
             updateRockMatrix();
-            mainActivity.refreshUI();
+            gameActivity.refreshUI();
         }
     };
-
+    public void setDELAY(long newDelay) {DELAY = newDelay; }
     public int getScore() {
         return score;
     }
-    public GameManager(MainActivity activity)
+    public GameManager(GameActivity activity)
     {
-        mainActivity = activity;
+        gameActivity = activity;
     }
     public int getLife(){
         return life;
@@ -92,11 +94,14 @@ public class GameManager {
             SignalManager
                     .getInstance()
                     .vibrate(1000);
-
-            mainActivity.playHitSound();
+            gameActivity.playHitSound();
         }
         else
             score += SCORE_POINTS;
+    }
+
+    public void endGame(){
+        handler.removeCallbacks(runnable);
     }
 
     public boolean checkCollision(){
@@ -136,7 +141,7 @@ public class GameManager {
 
     public void startGame(){
         initBoard();
-        soundPlayer = new SoundPlayer(mainActivity);
+        soundPlayer = new SoundPlayer(gameActivity);
         startThread();
     }
 
@@ -145,6 +150,6 @@ public class GameManager {
         numberOfCrash = 0;
         score = 0;
         initBoard();
-        mainActivity.refreshUI();
+        gameActivity.refreshUI();
     }
 }

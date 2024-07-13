@@ -6,24 +6,97 @@
     android:background="@color/yellow_600"
     tools:context=".Fragments.ListFragment">
 
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/list_LBL_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
         android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:text="Fragment #1"/>
+        android:text="High Scores"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/list_LBL_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/list_LBL_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Send"
-        android:textAllCaps="true" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/list_LBL_title">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score4"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score5"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score6"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score7"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score8"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score9"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_LBL_score10"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/default_highscore_button_height"
+            android:layout_gravity="center"
+            android:text="Send" />
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 </RelativeLayout>

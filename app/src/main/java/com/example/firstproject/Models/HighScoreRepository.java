@@ -12,6 +12,7 @@ import com.google.gson.reflect.TypeToken;
 public class HighScoreRepository {
     public static HighScoreRepository instance;
     public static final String HIGH_SCORES = "highScores";
+    private int numOfScores = 0;
     private ArrayList<Score> scores;
     private final int MAX_SCORES = 10;
 
@@ -27,6 +28,16 @@ public class HighScoreRepository {
         }
         saveScores();
     }
+
+    public ArrayList<Score> getScores() {
+        return scores;
+    }
+
+    public int getScore(int i){
+        Score score = scores.get(i);
+        return score.getScore();
+    }
+
 
     private void saveScores(){
         String json = new Gson().toJson(scores);
@@ -44,6 +55,7 @@ public class HighScoreRepository {
 
     public void addScore(Score score){
         scores.add(score);
+        numOfScores++;
         Collections.sort(scores, new Comparator<Score>() {
             @Override
             public int compare(Score s1, Score s2) {
@@ -53,6 +65,7 @@ public class HighScoreRepository {
         if(scores.size() > MAX_SCORES){
             scores.remove(scores.size() - 1);
         }
+        saveScores();
     }
 
 }
